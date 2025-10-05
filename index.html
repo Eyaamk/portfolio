@@ -9,13 +9,13 @@
     /* Global Styles */
     * { box-sizing: border-box; margin:0; padding:0; }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', Arial, sans-serif; background: #f9fafb; color: #333; line-height: 1.6; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #fdf2f8; color: #333; line-height: 1.6; }
 
     /* Navigation */
     nav {
       position: fixed;
       top: 0; left: 0; width: 100%;
-      background: rgba(79, 70, 229, 0.95);
+      background: rgba(236, 72, 153, 0.95); /* Pink */
       color: white;
       padding: 1rem 2rem;
       display: flex;
@@ -27,32 +27,30 @@
     nav .logo { font-weight: 700; font-size: 1.2rem; }
     nav ul { display: flex; list-style: none; gap: 1.5rem; }
     nav ul li a { color: white; font-weight: 500; text-decoration: none; transition: color 0.3s; }
-    nav ul li a:hover { color: #dbeafe; }
+    nav ul li a:hover { color: #ffe4f1; }
 
     /* Header */
     header {
-      background: linear-gradient(135deg, #4f46e5, #6d28d9);
+      background: linear-gradient(135deg, #ec4899, #f9a8d4); /* Pink gradient */
       color: #fff;
       text-align: center;
       padding: 6rem 1rem 4rem;
     }
     header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
-    header p { font-size: 1.25rem; font-weight: 500; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    header p { font-size: 1.25rem; font-weight: 500; max-width: 650px; margin: 0 auto; opacity: 0.95; }
 
     /* Sections */
     section { max-width: 1000px; margin: 3rem auto; padding: 0 1rem; }
     section h2 {
       font-size: 2rem; margin-bottom: 1rem; color: #111827;
-      border-bottom: 3px solid #4f46e5; display: inline-block; padding-bottom: 0.3rem;
+      border-bottom: 3px solid #ec4899; display: inline-block; padding-bottom: 0.3rem;
     }
 
     /* About */
     .about p { font-size: 1.05rem; color: #4b5563; margin-top: 1rem; }
-
-    /* Skills Badges */
     .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
     .skills span {
-      background: #4f46e5; color: white; padding: 0.3rem 0.8rem;
+      background: #ec4899; color: white; padding: 0.3rem 0.8rem;
       border-radius: 999px; font-size: 0.85rem; font-weight: 500;
     }
 
@@ -70,7 +68,7 @@
     .contact a { display: inline-block; margin-bottom: 0.5rem; font-weight: 500; }
 
     /* Footer */
-    footer { text-align: center; padding: 2rem 1rem; background: #e5e7eb; color: #6b7280; font-size: 0.95rem; }
+    footer { text-align: center; padding: 2rem 1rem; background: #ffe4f1; color: #6b7280; font-size: 0.95rem; }
 
     /* Responsive */
     @media (max-width: 768px) { nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; } }
@@ -88,13 +86,21 @@
   </nav>
 
   <header>
-    <h1>Aya Mokadem</h1>
-    <p>Hi! I’m Aya, a second-year ICT Engineering student passionate about coding, cloud computing, and DevOps. I love building projects in Python, exploring modern technologies, and creating efficient solutions.</p>
+    <h1>Hi, I’m Aya Mokadem 👋</h1>
+    <p>
+      A passionate ICT Engineering student, Python developer, and cloud enthusiast. 
+      I love building web applications, exploring data science, and automating tasks with code. 
+      Currently learning DevOps practices and designing scalable systems while contributing to exciting projects.
+    </p>
   </header>
 
   <section id="about" class="about">
     <h2>About Me</h2>
-    <p>I enjoy turning ideas into functional applications and solving real-world problems with software. My interests include Python development, data analysis, AI, cloud infrastructure, and DevOps pipelines. I love learning, collaborating, and building projects that make a difference.</p>
+    <p>
+      I’m driven by curiosity and creativity, constantly exploring new technologies and ways to improve my skills. 
+      I enjoy collaborating on projects, solving real-world problems with code, and turning ideas into functional, user-friendly applications. 
+      Beyond coding, I like learning about cloud computing, data analysis, and the latest trends in DevOps.
+    </p>
     <div class="skills">
       <span>Python</span>
       <span>Data Analysis</span>
@@ -103,6 +109,7 @@
       <span>Cloud Computing</span>
       <span>Git & GitHub</span>
       <span>Jupyter Notebook</span>
+      <span>Web Development</span>
     </div>
   </section>
 
@@ -110,36 +117,32 @@
     <h2>Projects</h2>
     <div class="projects">
       <div class="card">
+        <h3><a href="https://github.com/Eyaamk/Reseaux_de_nourones" target="_blank" rel="noopener">Neurone Network</a></h3>
+        <p>Python project implementing artificial neural networks to solve pattern recognition and prediction tasks. Includes data preprocessing, model training, and evaluation.</p>
+      </div>
+      <div class="card">
         <h3><a href="https://github.com/Eyaamk/calculator_project" target="_blank" rel="noopener">Calculator Project</a></h3>
-        <p>A Python calculator with a clean interface for arithmetic operations.</p>
+        <p>A Python calculator with a clean interface for arithmetic operations and quick computations.</p>
       </div>
       <div class="card">
         <h3><a href="https://github.com/Eyaamk/Jeu_Yatzee" target="_blank" rel="noopener">Jeu Yatzee</a></h3>
-        <p>A Python game simulating the classic Yahtzee dice game with scoring and interaction.</p>
+        <p>A Python game simulating the classic Yahtzee dice game with interactive scoring and player engagement.</p>
       </div>
       <div class="card">
         <h3><a href="https://github.com/Eyaamk/Prediction_de_nombre_de_medailles" target="_blank" rel="noopener">Medal Prediction</a></h3>
-        <p>Predicting medal counts using Python, Jupyter Notebook, and data visualization.</p>
+        <p>Data analysis project predicting medal counts using Python, Jupyter Notebook, and visualization techniques.</p>
       </div>
       <div class="card">
-        <h3><a href="https://github.com/Eyaamk/WebScrapingProject" target="_blank" rel="noopener">Web Scraping</a></h3>
-        <p>Python project for extracting structured data from websites efficiently.</p>
-      </div>
-      <div class="card">
-        <h3><a href="https://github.com/Eyaamk/FlaskApp" target="_blank" rel="noopener">Flask Web App</a></h3>
-        <p>A web application using Flask with backend integration and interactive features.</p>
-      </div>
-      <div class="card">
-        <h3><a href="https://github.com/Eyaamk/DataScienceProject" target="_blank" rel="noopener">Data Science Analysis</a></h3>
-        <p>Analyzing datasets to extract insights and visualize trends using Python libraries.</p>
-      </div>
+        <h3><a href="https://github.com/Eyaamk/Projet_Covoiturage" target="_blank" rel="noopener">Projet Covoiturage</a></h3>
+        <p>A collaborative Python project for a carpooling system. Features user registration, trip planning, and route optimization for efficient shared travel.</p>
+      </div>    
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p class="contact">
-      📧 <a href="mailto:your.email@example.com">your.email@example.com</a><br>
+      📧 <a href="eyamk82@gmail.com">your.email@example.com</a><br>
       💼 <a href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noopener">LinkedIn</a><br>
       🐙 <a href="https://github.com/Eyaamk" target="_blank" rel="noopener">GitHub</a>
     </p>
