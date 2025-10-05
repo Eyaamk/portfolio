@@ -7,168 +7,136 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* Global Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0; padding: 0;
+    * { box-sizing: border-box; margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', Arial, sans-serif; background: #f9fafb; color: #333; line-height: 1.6; }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(79, 70, 229, 0.95);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background-color: #f9fafb;
-      color: #333;
-      line-height: 1.6;
-    }
-    a {
-      color: #4f46e5;
-      text-decoration: none;
-      transition: color 0.3s, transform 0.3s;
-    }
-    a:hover {
-      color: #3730a3;
-      transform: scale(1.05);
-    }
+    nav .logo { font-weight: 700; font-size: 1.2rem; }
+    nav ul { display: flex; list-style: none; gap: 1.5rem; }
+    nav ul li a { color: white; font-weight: 500; text-decoration: none; transition: color 0.3s; }
+    nav ul li a:hover { color: #dbeafe; }
 
     /* Header */
     header {
       background: linear-gradient(135deg, #4f46e5, #6d28d9);
       color: #fff;
       text-align: center;
-      padding: 4rem 1rem;
+      padding: 6rem 1rem 4rem;
     }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.25rem;
-      font-weight: 500;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    header h1 { font-size: 3rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.25rem; font-weight: 500; opacity: 0.9; max-width: 600px; margin: 0 auto; }
 
     /* Sections */
-    section {
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
+    section { max-width: 1000px; margin: 3rem auto; padding: 0 1rem; }
     section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #111827;
-      border-bottom: 3px solid #4f46e5;
-      display: inline-block;
-      padding-bottom: 0.3rem;
+      font-size: 2rem; margin-bottom: 1rem; color: #111827;
+      border-bottom: 3px solid #4f46e5; display: inline-block; padding-bottom: 0.3rem;
     }
 
-    /* About Me */
-    .about p {
-      font-size: 1.05rem;
-      color: #4b5563;
-      margin-top: 1rem;
+    /* About */
+    .about p { font-size: 1.05rem; color: #4b5563; margin-top: 1rem; }
+
+    /* Skills Badges */
+    .skills { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .skills span {
+      background: #4f46e5; color: white; padding: 0.3rem 0.8rem;
+      border-radius: 999px; font-size: 0.85rem; font-weight: 500;
     }
 
     /* Projects */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
+    .projects { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
     .card {
-      background: #fff;
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      background: #fff; padding: 1.5rem; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-    }
-    .card h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: #111827;
-    }
-    .card p {
-      color: #4b5563;
-      font-size: 0.95rem;
-    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
+    .card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; color: #111827; }
+    .card p { color: #4b5563; font-size: 0.95rem; }
 
     /* Contact */
-    .contact a {
-      display: inline-block;
-      margin-bottom: 0.5rem;
-      font-weight: 500;
-    }
+    .contact a { display: inline-block; margin-bottom: 0.5rem; font-weight: 500; }
 
     /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #e5e7eb;
-      color: #6b7280;
-      font-size: 0.95rem;
-    }
+    footer { text-align: center; padding: 2rem 1rem; background: #e5e7eb; color: #6b7280; font-size: 0.95rem; }
 
     /* Responsive */
-    @media (max-width: 600px) {
-      header h1 { font-size: 2.2rem; }
-      header p { font-size: 1rem; }
-      section h2 { font-size: 1.5rem; }
-    }
+    @media (max-width: 768px) { nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; } }
+    @media (max-width: 600px) { header h1 { font-size: 2.2rem; } header p { font-size: 1rem; } section h2 { font-size: 1.5rem; } }
   </style>
 </head>
 <body>
+  <nav>
+    <div class="logo">Aya Mokadem</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>Aya Mokadem</h1>
-    <p>
-      Hi! I’m Aya, a second-year ICT Engineering student passionate about coding, cloud computing, and DevOps. 
-      I love building projects with Python, exploring modern technologies, and learning to create scalable, efficient solutions.
-    </p>
+    <p>Hi! I’m Aya, a second-year ICT Engineering student passionate about coding, cloud computing, and DevOps. I love building projects in Python, exploring modern technologies, and creating efficient solutions.</p>
   </header>
 
-  <section class="about">
+  <section id="about" class="about">
     <h2>About Me</h2>
-    <p>
-      I enjoy turning ideas into functional applications and solving real-world problems through software. 
-      My interests range from Python development, data analysis, and AI, to cloud infrastructure and DevOps pipelines. 
-      I’m always eager to learn, collaborate, and build projects that make a difference.
-    </p>
+    <p>I enjoy turning ideas into functional applications and solving real-world problems with software. My interests include Python development, data analysis, AI, cloud infrastructure, and DevOps pipelines. I love learning, collaborating, and building projects that make a difference.</p>
+    <div class="skills">
+      <span>Python</span>
+      <span>Data Analysis</span>
+      <span>Flask</span>
+      <span>DevOps</span>
+      <span>Cloud Computing</span>
+      <span>Git & GitHub</span>
+      <span>Jupyter Notebook</span>
+    </div>
   </section>
 
-  <section>
+  <section id="projects">
     <h2>Projects</h2>
     <div class="projects">
       <div class="card">
         <h3><a href="https://github.com/Eyaamk/calculator_project" target="_blank" rel="noopener">Calculator Project</a></h3>
-        <p>A simple Python calculator designed with a clean interface to perform basic arithmetic operations efficiently.</p>
+        <p>A Python calculator with a clean interface for arithmetic operations.</p>
       </div>
       <div class="card">
         <h3><a href="https://github.com/Eyaamk/Jeu_Yatzee" target="_blank" rel="noopener">Jeu Yatzee</a></h3>
-        <p>A Python game simulating the classic Yahtzee dice game, featuring a scoring system and player interaction.</p>
+        <p>A Python game simulating the classic Yahtzee dice game with scoring and interaction.</p>
       </div>
       <div class="card">
         <h3><a href="https://github.com/Eyaamk/Prediction_de_nombre_de_medailles" target="_blank" rel="noopener">Medal Prediction</a></h3>
-        <p>Data analysis project predicting medal counts using Python and Jupyter Notebook with data visualization techniques.</p>
+        <p>Predicting medal counts using Python, Jupyter Notebook, and data visualization.</p>
       </div>
       <div class="card">
         <h3><a href="https://github.com/Eyaamk/WebScrapingProject" target="_blank" rel="noopener">Web Scraping</a></h3>
-        <p>Python project for scraping web data, extracting useful information, and organizing it into structured formats.</p>
+        <p>Python project for extracting structured data from websites efficiently.</p>
       </div>
       <div class="card">
         <h3><a href="https://github.com/Eyaamk/FlaskApp" target="_blank" rel="noopener">Flask Web App</a></h3>
-        <p>A simple web application using Flask framework, demonstrating user interaction and backend integration.</p>
+        <p>A web application using Flask with backend integration and interactive features.</p>
       </div>
       <div class="card">
         <h3><a href="https://github.com/Eyaamk/DataScienceProject" target="_blank" rel="noopener">Data Science Analysis</a></h3>
-        <p>Analyzing datasets to extract insights and visualize trends using Python libraries like Pandas and Matplotlib.</p>
+        <p>Analyzing datasets to extract insights and visualize trends using Python libraries.</p>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="contact">
     <h2>Contact</h2>
     <p class="contact">
       📧 <a href="mailto:your.email@example.com">your.email@example.com</a><br>
